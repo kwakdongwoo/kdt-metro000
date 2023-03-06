@@ -522,4 +522,29 @@ $.fn.subwayMap = function (method) {
 
 };
 
+window.onresize = () => {
+
+
+    if ($(window).width() > 768){
+        $(".subway-map").css("zoom", $(window).width() / $('canvas').width())
+
+       
+    } else {
+        $(".subway-map").css("zoom", $(window).width() / $('canvas').width())
+
+    }
+
+    window.onload = () => {
+
+        if ($(window).width() > 768){
+
+            $(".subway-map").css("zoom", $(window).width() / $('canvas').width())
+        }else {
+            $(".subway-map").css("zoom", $(window).width()  / $('canvas').width())
+
+        }
+    };
+
+};
+
 })(jQuery);
