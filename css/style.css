@@ -9,8 +9,9 @@ body {
   width: 100vw;
   height: 100vh;
   border: 1px solid #1e90ff;
-  background: #555;
-  
+  /* background-image: url(../LP1610090440_임진훈_서울지도.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 
@@ -31,18 +32,14 @@ body {
 /* subway-map */
 
 
-
-
-
 .subway-map {
-  border : 3px solid blue;
-
-
+  max-width: 1200px;
+  height: 900px;
+  border: 3px solid blue;
 }
 
 canvas {
-  border : 3px solid red;
-
+  border: 3px solid red;
 }
 
 /* btn */
@@ -73,7 +70,6 @@ canvas {
   color: #82eca7;
   background: #555;
 }
-
 
 #btn_group .sub div {
   z-index: 99999;
@@ -124,12 +120,10 @@ canvas {
   bottom: 58px;
 }
 
-
-
 /* nav */
 
 #nav {
-  position: absolute;
+  position: fixed;
   right: -300px;
   bottom: 0;
   display: flex;
@@ -137,9 +131,10 @@ canvas {
   height: 100%;
   z-index: 9999;
   align-items: center;
+  color: #fff;
 }
 
-#nav:hover {
+#nav.on {
   right: 0px;
 }
 
@@ -149,31 +144,37 @@ canvas {
   color: #999;
 }
 
-
-
-#nav .name_tag{
-display: none;
-height: 80px;
-width: 30px;
-color: #999;
+#nav .name_tag {
+  display: none;
+  height: 80px;
+  width: 30px;
+  color: #999;
 }
 
-#nav .name_tag.on{
-display: block;
+#nav .name_tag.on {
+  display: block;
 }
 
-#nav .nav-box{
-  background: #fff;
+#nav .nav-box {
+  background: #333;
   width: 300px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-#nav .nav-box .contact{
-margin-top: auto ;
+#nav .nav-box h2 img {
+  height: 150px;
 }
 
+#nav .nav-box h2 {
+  height: 160px;
+  text-align: center;
+}
+
+#nav .nav-box .contact {
+  margin-top: auto;
+}
 
 #nav .depth1 li {
   width: 100%;
@@ -186,31 +187,56 @@ margin-top: auto ;
   justify-content: space-around;
 }
 
+.subway-map {
+  width: 1250px;
+  height: 800px;
+  max-width: 1250px;
+  overflow-x: hidden;
+}
+
 @media screen and (max-width:1024px) {
 
   #nav {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: -400px;
     display: flex;
     height: 430px;
+    width: 100%;
     flex-direction: column;
     transition: all 0.5s;
   }
 
-  #nav:hover {
+  #nav.on {
     bottom: 0;
+  }
+
+  #nav .nav_btn .name_tag {
+    display: none;
+  }
+
+  #nav .nav_btn {
+    display: flex;
+    flex-direction: row;
   }
 
   #nav .slide_btn {
     height: 30px;
-    width: 70px;
+    width: 80px;
     color: #999;
     justify-content: center;
   }
 
-  #nav .nav-box{
-    background: #fff;
+  #nav .name_tag {
+    display: none;
+    height: 30px;
+    width: 80px;
+    color: #999;
+  }
+
+  #nav .nav-box {
+    color: #fff;
+    background: #333;
     width: 100%;
     height: 400px;
   }
@@ -218,10 +244,27 @@ margin-top: auto ;
   #nav .depth1 li {
     border: 1px solid pink;
   }
-  #nav .depth1 li a{
+
+  #nav .depth1 li a {
     width: 100%;
     height: 100%;
     padding: 20px 10px;
+  }
+
+  /* map */
+
+  #wrap {
+    width: 100vw;
+    top: 0;
+    transform: unset;
+    height: 100vh;
+    left: 0;
+    overflow-x: hidden;
+  }
+
+  .subway-map {
+    width: 600px;
+    height: 800px;
   }
 
 }

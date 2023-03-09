@@ -1,5 +1,14 @@
-$('#btn_group .main').on('click',function(){
+$('#nav button').on('click',function(){
+  console.log($(this).parents('#nav'))
+  if( $(this).parents('#nav') ){
+  $(this).parents('#nav').Class('on')
+  } else if( $(this).parents('#nav').hasClass('on') ){
+    $(this).parents('#nav').removeClass('on')
+  }
+})
 
+
+$('#btn_group .main').on('click',function(){
   if ( $(this).parents().hasClass('on') ) {
     $(this).parents().removeClass('on')
   } else {
@@ -11,8 +20,6 @@ $('#btn_group .main').on('click',function(){
   } else {
     $(this).find('i').removeClass('fa-x').addClass('fa-bars-staggered')
   }
-  
-
 })
 
 
@@ -37,4 +44,9 @@ $(window).on('load', function(){
       $('.introAni').addClass('on')
   }
 
+})
+
+
+$('#nav-button').click(function () {
+  $('#nav').toggleClass('on')
 })
