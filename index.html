@@ -29,7 +29,8 @@
     <nav class="nav-box">
       <h1><span class="pc">2호선 지하철 정보</span></h1>
       <ul class="depth1">
-        <li class="list active"><a href="#"><i class="fa-regular fa-user"></i><span class="pc">로그인/회원가입</span ></a></li>
+        <li class="list active"><a href="#"><i class="fa-solid fa-map-location-dot"></i><span class="pc">지도보기</span ></a></li>
+        <li class="list"><a href="#"><i class="fa-regular fa-user"></i><span class="pc">로그인/회원가입</span ></a></li>
         <li class="list"><a href="#"><i class="fa-solid fa-magnifying-glass"></i><spn class="pc">검색하기</spn ></a></li>
         <li class="list"><a href="#"><i class="fa-regular fa-star"></i><span class="pc">즐겨찾기</span ></a></li>
         <li class="list"><a href="#"><i class="fa-brands fa-github"></i><span class="pc">ABOUT US</span ></a></li>
@@ -401,19 +402,19 @@ const lisMobile = line2.map((station, i) => {
 
   if (i < 15) {
     return `<li data-coords="${i + 7}, 4">
-${line2[i] ? line2[i].statn_nm : ''}
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
   } else if (i < 20) {
     return `<li data-coords="${10 + (i - 19) * 2} , 18">
-<a href="#">${line2[i] ? line2[i].statn_nm : ''}</a>
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
   } else if (i < 37) {
     return `<li data-coords="11, ${10 - (i - 28)}">
-<a href="#">${line2[i] ? line2[i].statn_nm : ''}</a>
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
   } else if (i < 45) {
     return `<li data-coords="${10 - (i - 37)}, 2">
-<a href="#">${line2[i] ? line2[i].statn_nm : ''}</a>
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
   }
 
@@ -423,23 +424,23 @@ const lisPc = line2.map((station, i) => {
 
 if (i < 9) {
   return `<li data-coords="${10+i*2}, 4">
-${line2[i] ? line2[i].statn_nm : ''}
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
 } else if (i < 19) {
   return `<li data-coords=" 27, ${5 + (i -9)}">
-<a href="#">${line2[i] ? line2[i].statn_nm : ''}</a>
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
 } else if (i < 32) {
   return `<li data-coords="${26 - (i - 19)*2}, 15 ">
-<a href="#">${line2[i] ? line2[i].statn_nm : ''}</a>
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
 } else if (i < 39) {
   return `<li data-coords="2, ${9 - (i - 37)}">
-<a href="#">${line2[i] ? line2[i].statn_nm : ''}</a>
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`
 } else if (i < 43) {
   return `<li data-coords="${2 + (i - 39)*2}, 4">
-<a href="#">${line2[i] ? line2[i].statn_nm : ''}</a>
+<a href="trainInfo.html?statn_nm=${line2[i].statn_nm}">${line2[i] ? line2[i].statn_nm : ''}</a>
 </li>`}
 })
 
@@ -459,9 +460,9 @@ const getHtmlText = () => {
 </ul>
 
 <ul data-color="#82eca7" data-label="jQuery Widgets">
-  <li data-coords="2, 6"></li>
-  <li data-coords="2, 2"> <a href="#"></a> </li>
-  <li data-coords="3, 2"> <a href="#"></a> </li>
+  <li data-coords="2,6"></li>
+  <li data-coords="2,2"> <a href="#"></a></li>
+  <li data-coords="3,2"> <a href="#"></a></li>
 </ul>
 
 
@@ -474,7 +475,7 @@ const getHtmlText = () => {
 
 const htmlText = `
 <div class="subway-map" data-columns="30" data-rows="20" data-cellSize="50" data-legendId="legend"
-data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8">
+data-textClass="text" data-gridNumbers="true" data-grid="false" data-lineWidth="8">
 
 <ul data-color="#82eca7" data-label="jQuery Widgets">
   ${lisPc.join('')}
@@ -485,9 +486,6 @@ data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="8
   }
 }
   </script>
-
-
-
 
 
   <!-- <div class="introAni">

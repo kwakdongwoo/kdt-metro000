@@ -47,7 +47,7 @@ canvas {
 
 
 #nav {
-  border-right: 7px solid #19a449;
+  border-right: 7px solid #79c6fb;
   padding-left: 10px;
   border-radius: 5px 0 0 5px;
   position: fixed;
@@ -58,7 +58,7 @@ canvas {
   height: 100%;
   z-index: 9999;
   align-items: center;
-  background: #2b343b;
+  background: #aed7f4;
   color: #fff;
   overflow-x: hidden;
   transition: all 0.5s;
@@ -72,26 +72,25 @@ canvas {
 #nav ul li.active {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background: #19a449;
+  background: #79c6fb;
 }
 
 #nav ul li.active a::before {
   content: '';
-  background: #2b343b;
+  background: #aed7f4;
   border-radius: 50%;
-  box-shadow: 15px 15px 0 #19a449;
+  box-shadow: 15px 15px 0 #79c6fb;
 }
 
 #nav ul li.active a::after {
   content: '';
-  background: #2b343b;
+  background: #aed7f4;
   border-radius: 50%;
-  box-shadow: 15px -15px 0 #19a449;
+  box-shadow: 15px -15px 0 #79c6fb;
 }
 
 #nav .nav-box {
   margin-right: 7px;
-  background: #2b343b;
   width: 300px;
   height: 100%;
   display: flex;
@@ -155,7 +154,7 @@ canvas {
     height: 65px;
     z-index: 9999;
     align-items: center;
-    background: #2b343b;
+    background: #aed7f4;
     color: #fff;
     overflow: auto;
     transition: all 0.5s;

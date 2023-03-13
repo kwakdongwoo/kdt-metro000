@@ -551,37 +551,5 @@ THE SOFTWARE.
 
     };
 
-    window.onload = () => {
-        $('#wrap').html(getHtmlText())
-
-        $(".subway-map").subwayMap({
-            debug: true
-        });
-    }
-
-    window.onresize = () => {
-        $('#wrap').html('')
-
-        $('#wrap').html(getHtmlText())
-
-        $(".subway-map").subwayMap({
-            debug: true
-        })
-
-        if ($(window).width() < 1249) {
-            $('.subway-map').css("zoom", $(window).width() / $('canvas').width())
-        }
-    };
-
-
-    $('#wrap').html('')
-
-    $(".subway-map").subwayMap({
-        debug: true
-    })
-
-    if ($(window).width() < 1249) {
-        $('.subway-map').css("zoom", $(window).width() / $('canvas').width())
-    }
 
 })(jQuery);
