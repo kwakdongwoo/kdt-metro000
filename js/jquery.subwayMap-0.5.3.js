@@ -471,7 +471,7 @@ THE SOFTWARE.
             }
             var style = (textClass != "" ? "class='" + textClass + "' " : "") + "style='" + (textClass == "" ? "font-size:8pt;font-family:Verdana,Arial,Helvetica,Sans Serif;text-decoration:none;" : "") + "width:100px;" + (pos != "" ? pos : "") + ";position:absolute;top:" + (y + el.position().top - (topOffset > 0 ? topOffset : 0)) + "px;left:" + (x + el.position().left) + "px;z-index:3000;'";
             if (data.link != "")
-                $("<a " + style + " title='" + data.title.replace(/\\n/g, "<br />") + "' href='" + data.link + "' target='_new'>" + data.label.replace(/\\n/g, "<br />") + "</span>").appendTo(el);
+                $("<a " + style + " title='" + data.title.replace(/\\n/g, "<br />") + "' href='" + data.link + "' target='_self'>" + data.label.replace(/\\n/g, "<br />") + "</span>").appendTo(el);
             else
                 $("<span " + style + ">" + data.label.replace(/\\n/g, "<br />") + "</span>").appendTo(el);
 
@@ -551,6 +551,14 @@ THE SOFTWARE.
 
     };
 
+    window.onload = () => {
+        $('#wrap').html(getHtmlText())
+
+        $(".subway-map").subwayMap({
+            debug: true
+        });
+    }
+
     window.onresize = () => {
         $('#wrap').html('')
 
@@ -568,13 +576,9 @@ THE SOFTWARE.
 
     $('#wrap').html('')
 
-    $('#wrap').html(getHtmlText())
-
-
     $(".subway-map").subwayMap({
         debug: true
     })
-
 
     if ($(window).width() < 1249) {
         $('.subway-map').css("zoom", $(window).width() / $('canvas').width())
