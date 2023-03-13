@@ -2,49 +2,32 @@
 
 body {
   overflow: hidden;
+  background-image: url(../img/hader.png) no-repeat;
+  background-position-y:top;
+  height: 100vh;
 }
 
 #wrap {
-  position: relative;
+
   width: 100vw;
   height: 100vh;
   border: 1px solid #1e90ff;
-  /* background-image: url(../LP1610090440_임진훈_서울지도.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
-
-
-/* intro */
-
-/* .introAni.on {
-  display: none;
-}
-
-.introAni img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
-
-/* subway-map */
-
 
 .subway-map {
+  
   max-width: 1200px;
   height: 900px;
   border: 3px solid blue;
 }
 
 canvas {
+  position: relative;
   border: 3px solid red;
+  background-image: url(../img/mapbg.png);
 }
 
 /* nav */
-
-
 
 #nav {
   border-right: 7px solid #79c6fb;
@@ -58,11 +41,14 @@ canvas {
   height: 100%;
   z-index: 9999;
   align-items: center;
-  background: #aed7f4;
+  background: #aed7f48a;
   color: #fff;
   overflow-x: hidden;
   transition: all 0.5s;
 }
+
+#nav img {height: 150px;
+padding: 20px;}
 
 #nav:hover {
   width: 300px;
@@ -114,7 +100,6 @@ canvas {
   font-size: 20px;
   padding: 20px;
   display: block;
-  height: 100%;
   width: 300px;
   transition: all 0.3;
 }

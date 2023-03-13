@@ -33,10 +33,11 @@ if ($(window).width() < 1249) {
     $('.subway-map').css("zoom", $(window).width() / $('canvas').width())
 }
 
+
 $(document).on('click','.text',function(){
     var statn_nm = $(this).text().slice(1,-1)
     console.log(statn_nm)
-    localStorage.gdata = JSON.stringify(statn_nm)
+    localStorage.recentSearch = JSON.stringify(statn_nm)
 
 })
 
