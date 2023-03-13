@@ -4,27 +4,34 @@ body {
   overflow: hidden;
   background-image: url(../img/hader.png) no-repeat;
   background-position-y:top;
-  height: 100vh;
 }
 
 #wrap {
-
-  width: 100vw;
   height: 100vh;
   border: 1px solid #1e90ff;
+  position: relative;
 }
 
 .subway-map {
-  
-  max-width: 1200px;
-  height: 900px;
-  border: 3px solid blue;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 1320px;
+height: 880px;
+overflow-x: hidden;
 }
 
+
 canvas {
-  position: relative;
-  border: 3px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   background-image: url(../img/mapbg.png);
+  background-position: bottom;
+  background-size: cover;
 }
 
 /* nav */
@@ -113,12 +120,7 @@ padding: 20px;}
   justify-content: space-around;
 }
 
-.subway-map {
-  width: 1250px;
-  height: 800px;
-  max-width: 1250px;
-  overflow-x: hidden;
-}
+
 
 @media screen and (max-width:1024px) {
 

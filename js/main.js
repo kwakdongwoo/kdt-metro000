@@ -1,5 +1,4 @@
 // map onload
-
 window.onload = () => {
     $('#wrap').html(getHtmlText())
 
@@ -33,12 +32,22 @@ if ($(window).width() < 1249) {
     $('.subway-map').css("zoom", $(window).width() / $('canvas').width())
 }
 
+var id = 0;
+const recentSearch = [];
 
-$(document).on('click','.text',function(){
-    var statn_nm = $(this).text().slice(1,-1)
-    console.log(statn_nm)
+if (localStorage.recentSearch) {
+    recentSearch = JSON.parse(localStorage.recentSearch)
+    if (recentSearch) {
+        id = recentSearch[recentSearch.length - 1]['id']
+    }
+}
+
+$(document).on('click', '.text', function () {
+    id++
+    let statn_nm = $(this).text().slice(1, -1)
+    let obj = {id:id, text:statn_nm}
+    console.log(recentSearch)
+   recentSearch.push(obj)
+   console.log(recentSearch)
     localStorage.recentSearch = JSON.stringify(statn_nm)
-
 })
-
-
